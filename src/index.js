@@ -21,8 +21,8 @@
     commands: {
       is: nx.noop,
       isHotkey: nx.noop,
-      active: nx.noop,
-      deactive: nx.noop,
+      activate: nx.noop,
+      deactivate: nx.noop,
       toggle: nx.noop
     },
     events: {
