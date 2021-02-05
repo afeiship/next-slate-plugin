@@ -7,12 +7,12 @@
         id: 'bold',
         type: 'format',
         serialize: {
-          input: (node, children) => {
+          output: (node, children) => {
             return `<strong>${children}</strong>`;
           }
         }
       });
-      const deepString = p1.serialize.input.toString();
+      const deepString = p1.serialize.output.toString();
       expect(p1.type).toBe('format');
       expect(deepString.includes('<strong>${children}</strong>')).toBe(true);
     });

@@ -24,7 +24,7 @@ const Bold = NxSlatePlugin.define({
   id: 'bold',
   type: 'format',
   serialize: {
-    input: (node, children) => {
+    output: (node, children) => {
       return `<strong>${children}</strong>`;
     }
   }
