@@ -2,8 +2,8 @@
  * name: @jswork/next-slate-plugin
  * description: Slate plugin manager.
  * homepage: https://github.com/afeiship/next-slate-plugin
- * version: 1.0.4
- * date: 2021-02-05 18:19:53
+ * version: 1.0.5
+ * date: 2021-02-05 18:21:57
  * license: MIT
  */
 
