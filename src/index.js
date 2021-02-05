@@ -19,12 +19,8 @@
       }
     },
     serialize: {
-      input: function (inNode, inChildren) {
-        nx.error(MSG_ERROR_IMPL);
-      },
-      output: function (inNode, inChildren) {
-        nx.error(MSG_ERROR_IMPL);
-      }
+      input: nx.noop,
+      output: nx.noop
     },
     command: {
       is: function () {
@@ -38,9 +34,7 @@
       keydown: function (inEvent) {},
       paste: function (inEvent) {}
     },
-    render: function (inContext, inProps) {
-      nx.error(MSG_ERROR_IMPL);
-    }
+    render: nx.noop
   };
 
   var NxSlatePlugin = nx.declare('nx.SlatePlugin', {
