@@ -11,6 +11,7 @@
       title: null,
       description: null
     },
+    hotkey: null,
     decorator: nx.stubValue,
     serialize: {
       input: nx.noop,
@@ -19,6 +20,7 @@
     statics: {},
     commands: {
       is: nx.noop,
+      isHotkey: nx.noop,
       active: nx.noop,
       deactive: nx.noop,
       toggle: nx.noop

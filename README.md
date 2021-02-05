@@ -55,14 +55,16 @@ const actived = NxSlatePlugin.actived(node, plugins);
     title: null,
     description: null
   },
+  hotkey: null,
   decorator: nx.stubValue,
   serialize: {
-    input: NxSlateDefaults.importer,
+    input: nx.noop,
     output: NxSlateDefaults.exporter
   },
   statics: {},
   commands: {
     is: nx.noop,
+    isHotkey: nx.noop,
     active: nx.noop,
     deactive: nx.noop,
     toggle: nx.noop
