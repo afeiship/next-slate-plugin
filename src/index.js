@@ -13,7 +13,7 @@
     },
     decorator: nx.stubValue,
     serialize: {
-      input: NxSlateDefaults.importer,
+      input: nx.noop,
       output: NxSlateDefaults.exporter
     },
     statics: {},
