@@ -3,7 +3,7 @@
  * description: Slate plugin manager.
  * homepage: https://github.com/afeiship/next-slate-plugin
  * version: 1.0.2
- * date: 2021-02-05 15:39:46
+ * date: 2021-02-05 16:19:44
  * license: MIT
  */
 
@@ -12,8 +12,8 @@
   var nx = global.nx || require('@jswork/next');
   var nxDeepAssign = nx.deepAssign || require('@jswork/next-deep-assign');
   var NxSlateDefaults = nx.SlateDefaults || require('@jswork/next-slate-defaults');
-
-  var MSG_ERROR_IMPL = 'Must be implemented.';
+  var slate = global.slate || require('slate');
+  var Element = slate.Element;
   var DEFAULT_SCHEMA = {
     id: null,
     type: 'block',
@@ -46,6 +46,26 @@
     statics: {
       define: function (inSchema) {
         return nxDeepAssign(null, DEFAULT_SCHEMA, inSchema);
+      },
+      actived: function (inNode, inPlugins) {
+        var isElement = Element.isElement(inNode);
+        if (isElement)
+          return inPlugins.find(function (plugin) {
+            return plugin.id === inNode.type;
+          });
+
+        // marks
+        var results = [];
+        nx.forIn(inNode, (mark, value) => {
+          if (mark !== 'text' && !!value) {
+            results.push(
+              inPlugins.find(function (plugin) {
+                return plugin.id === mark;
+              })
+            );
+          }
+        });
+        return results;
       }
     }
   });

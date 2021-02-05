@@ -12,9 +12,10 @@ npm install -S @jswork/next-slate-plugin
 ```
 
 ## apis
-| api    | params | description      |
-| ------ | ------ | ---------------- |
-| define | schema | Define a plugin. |
+| api     | params       | description                         |
+| ------- | ------------ | ----------------------------------- |
+| define  | schema       | Define a plugin.                    |
+| actived | node,plugins | Get actived plugin(s) from plugins. |
 
 ## usage
 ```js
@@ -29,6 +30,21 @@ const Bold = NxSlatePlugin.define({
     }
   }
 });
+
+const node = {
+  text: 'i am a bold text',
+  bold: true,
+  italic: true
+};
+const plugins = [{ id: 'paragraph' }, { id: 'bold' }, { id: 'italic' }, { id: 'blockquote'}];
+const actived = NxSlatePlugin.actived(node, plugins);
+
+/*
+[
+  { id: 'bold' },
+  { id: 'italic' },
+];
+*/
 ```
 
 ## full schema
