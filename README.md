@@ -41,36 +41,24 @@ const Bold = NxSlatePlugin.define({
     description: null
   },
   decorator: {
-    instance: function (inEditor) {
-      return inEditor;
-    },
-    classify: function (inEditor) {
-      return inEditor;
-    }
+    instance: nx.stubValue,
+    classify: nx.stubValue
   },
   serialize: {
-    input: function (inNode, inChildren) {
-      nx.error(MSG_ERROR_IMPL);
-    },
-    output: function (inNode, inChildren) {
-      nx.error(MSG_ERROR_IMPL);
-    }
+    input: nx.noop,
+    output: nx.noop
   },
   command: {
-    is: function () {
-      return true;
-    },
-    active: function () {},
-    deactive: function () {},
-    toggle: function () {}
+    is: nx.noop,
+    active: nx.noop,
+    deactive: nx.noop,
+    toggle: nx.noop
   },
   event: {
-    keydown: function (inEvent) {},
-    paste: function (inEvent) {}
+    keydown: nx.noop,
+    paste: nx.noop
   },
-  render: function (inContext, inProps) {
-    nx.error(MSG_ERROR_IMPL);
-  }
+  render: nx.noop
 }
 ```
 
