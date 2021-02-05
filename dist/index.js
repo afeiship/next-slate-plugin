@@ -2,8 +2,8 @@
  * name: @jswork/next-slate-plugin
  * description: Slate plugin manager.
  * homepage: https://github.com/afeiship/next-slate-plugin
- * version: 1.0.5
- * date: 2021-02-05 18:21:57
+ * version: 1.0.6
+ * date: 2021-02-05 22:22:15
  * license: MIT
  */
 
@@ -22,7 +22,7 @@
     },
     decorator: nx.stubValue,
     serialize: {
-      input: NxSlateDefaults.importer,
+      input: nx.noop,
       output: NxSlateDefaults.exporter
     },
     statics: {},
