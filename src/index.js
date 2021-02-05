@@ -2,6 +2,8 @@
   var global = typeof window !== 'undefined' ? window : this || Function('return this')();
   var nx = global.nx || require('@jswork/next');
   var nxDeepAssign = nx.deepAssign || require('@jswork/next-deep-assign');
+  var NxSlateDefaults = nx.SlateDefaults || require('@jswork/next-slate-defaults');
+
   var MSG_ERROR_IMPL = 'Must be implemented.';
   var DEFAULT_SCHEMA = {
     id: null,
@@ -15,8 +17,8 @@
       classify: nx.stubValue
     },
     serialize: {
-      input: nx.noop,
-      output: nx.noop
+      input: NxSlateDefaults.importer,
+      output: NxSlateDefaults.exporter
     },
     command: {
       is: nx.noop,

@@ -3,7 +3,7 @@
  * description: Slate plugin manager.
  * homepage: https://github.com/afeiship/next-slate-plugin
  * version: 1.0.1
- * date: 2021-02-05 14:23:42
+ * date: 2021-02-05 15:37:11
  * license: MIT
  */
 
@@ -11,6 +11,8 @@
   var global = typeof window !== 'undefined' ? window : this || Function('return this')();
   var nx = global.nx || require('@jswork/next');
   var nxDeepAssign = nx.deepAssign || require('@jswork/next-deep-assign');
+  var NxSlateDefaults = nx.SlateDefaults || require('@jswork/next-slate-defaults');
+
   var MSG_ERROR_IMPL = 'Must be implemented.';
   var DEFAULT_SCHEMA = {
     id: null,
@@ -24,8 +26,8 @@
       classify: nx.stubValue
     },
     serialize: {
-      input: nx.noop,
-      output: nx.noop
+      input: NxSlateDefaults.importer,
+      output: NxSlateDefaults.exporter
     },
     command: {
       is: nx.noop,
