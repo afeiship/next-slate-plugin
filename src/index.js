@@ -18,13 +18,7 @@
       output: NxSlateDefaults.exporter
     },
     statics: {},
-    commands: {
-      is: nx.noop,
-      isHotkey: nx.noop,
-      activate: nx.noop,
-      deactivate: nx.noop,
-      toggle: nx.noop
-    },
+    commands: null,
     events: {
       keydown: nx.noop,
       paste: nx.noop

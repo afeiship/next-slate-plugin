@@ -3,7 +3,7 @@
  * description: Slate plugin manager.
  * homepage: https://github.com/afeiship/next-slate-plugin
  * version: 1.0.8
- * date: 2021-02-06 00:10:04
+ * date: 2021-02-06 00:12:16
  * license: MIT
  */
 
@@ -27,13 +27,7 @@
       output: NxSlateDefaults.exporter
     },
     statics: {},
-    commands: {
-      is: nx.noop,
-      isHotkey: nx.noop,
-      activate: nx.noop,
-      deactivate: nx.noop,
-      toggle: nx.noop
-    },
+    commands: null,
     events: {
       keydown: nx.noop,
       paste: nx.noop
