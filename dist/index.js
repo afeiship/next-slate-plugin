@@ -3,7 +3,7 @@
  * description: Slate plugin manager.
  * homepage: https://github.com/afeiship/next-slate-plugin
  * version: 1.0.1
- * date: 2021-02-05 15:37:11
+ * date: 2021-02-05 15:39:20
  * license: MIT
  */
 
