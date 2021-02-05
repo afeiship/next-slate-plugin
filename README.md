@@ -31,6 +31,49 @@ const Bold = NxSlatePlugin.define({
 });
 ```
 
+## full schema
+```js
+{
+  id: null,
+  type: 'block',
+  meta: {
+    title: null,
+    description: null
+  },
+  decorator: {
+    instance: function (inEditor) {
+      return inEditor;
+    },
+    classify: function (inEditor) {
+      return inEditor;
+    }
+  },
+  serialize: {
+    input: function (inNode, inChildren) {
+      nx.error(MSG_ERROR_IMPL);
+    },
+    output: function (inNode, inChildren) {
+      nx.error(MSG_ERROR_IMPL);
+    }
+  },
+  command: {
+    is: function () {
+      return true;
+    },
+    active: function () {},
+    deactive: function () {},
+    toggle: function () {}
+  },
+  event: {
+    keydown: function (inEvent) {},
+    paste: function (inEvent) {}
+  },
+  render: function (inContext, inProps) {
+    nx.error(MSG_ERROR_IMPL);
+  }
+}
+```
+
 ## license
 Code released under [the MIT license](https://github.com/afeiship/next-slate-plugin/blob/master/LICENSE.txt).
 
