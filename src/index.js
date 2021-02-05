@@ -14,7 +14,7 @@
     },
     decorator: {
       instance: nx.stubValue,
-      classify: nx.stubValue
+      classify: {}
     },
     serialize: {
       input: NxSlateDefaults.importer,
