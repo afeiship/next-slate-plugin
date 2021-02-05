@@ -7,26 +7,23 @@
   var Element = slate.Element;
   var DEFAULT_SCHEMA = {
     id: null,
-    type: 'block',
     meta: {
       title: null,
       description: null
     },
-    decorator: {
-      instance: nx.stubValue,
-      classify: {}
-    },
+    decorator: nx.stubValue,
     serialize: {
       input: NxSlateDefaults.importer,
       output: NxSlateDefaults.exporter
     },
-    command: {
+    statics: {},
+    commands: {
       is: nx.noop,
       active: nx.noop,
       deactive: nx.noop,
       toggle: nx.noop
     },
-    event: {
+    events: {
       keydown: nx.noop,
       paste: nx.noop
     },

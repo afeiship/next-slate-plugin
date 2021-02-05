@@ -51,26 +51,23 @@ const actived = NxSlatePlugin.actived(node, plugins);
 ```js
 {
   id: null,
-  type: 'block',
   meta: {
     title: null,
     description: null
   },
-  decorator: {
-    instance: nx.stubValue,
-    classify: nx.stubValue
-  },
+  decorator: nx.stubValue,
   serialize: {
-    input: nx.noop,
-    output: nx.noop
+    input: NxSlateDefaults.importer,
+    output: NxSlateDefaults.exporter
   },
-  command: {
+  statics: {},
+  commands: {
     is: nx.noop,
     active: nx.noop,
     deactive: nx.noop,
     toggle: nx.noop
   },
-  event: {
+  events: {
     keydown: nx.noop,
     paste: nx.noop
   },

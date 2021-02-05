@@ -3,7 +3,7 @@
  * description: Slate plugin manager.
  * homepage: https://github.com/afeiship/next-slate-plugin
  * version: 1.0.4
- * date: 2021-02-05 18:11:07
+ * date: 2021-02-05 18:19:53
  * license: MIT
  */
 
@@ -16,26 +16,23 @@
   var Element = slate.Element;
   var DEFAULT_SCHEMA = {
     id: null,
-    type: 'block',
     meta: {
       title: null,
       description: null
     },
-    decorator: {
-      instance: nx.stubValue,
-      classify: {}
-    },
+    decorator: nx.stubValue,
     serialize: {
       input: NxSlateDefaults.importer,
       output: NxSlateDefaults.exporter
     },
-    command: {
+    statics: {},
+    commands: {
       is: nx.noop,
       active: nx.noop,
       deactive: nx.noop,
       toggle: nx.noop
     },
-    event: {
+    events: {
       keydown: nx.noop,
       paste: nx.noop
     },
