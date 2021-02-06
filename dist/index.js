@@ -3,7 +3,7 @@
  * description: Slate plugin manager.
  * homepage: https://github.com/afeiship/next-slate-plugin
  * version: 1.0.10
- * date: 2021-02-06 09:36:34
+ * date: 2021-02-06 23:12:32
  * license: MIT
  */
 
@@ -48,11 +48,10 @@
         var results = [];
         nx.forIn(inNode, (mark, value) => {
           if (mark !== 'text' && !!value) {
-            results.push(
-              inPlugins.find(function (plugin) {
-                return plugin.id === mark;
-              })
-            );
+            var plugin = inPlugins.find(function (plugin) {
+              return plugin.id === mark;
+            });
+            plugin && results.push(plugin);
           }
         });
         return results;

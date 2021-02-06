@@ -39,11 +39,10 @@
         var results = [];
         nx.forIn(inNode, (mark, value) => {
           if (mark !== 'text' && !!value) {
-            results.push(
-              inPlugins.find(function (plugin) {
-                return plugin.id === mark;
-              })
-            );
+            var plugin = inPlugins.find(function (plugin) {
+              return plugin.id === mark;
+            });
+            plugin && results.push(plugin);
           }
         });
         return results;
