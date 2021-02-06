@@ -19,10 +19,7 @@
     },
     statics: {},
     commands: null,
-    events: {
-      keydown: nx.noop,
-      paste: nx.noop
-    },
+    events: null,
     render: nx.noop
   };
 
