@@ -3,7 +3,7 @@
  * description: Slate plugin manager.
  * homepage: https://github.com/afeiship/next-slate-plugin
  * version: 1.0.10
- * date: 2021-02-07 11:06:26
+ * date: 2021-02-07 11:13:00
  * license: MIT
  */
 
@@ -30,22 +30,26 @@
     statics: {},
     commands: {
       is: function (inEditor) {
+        var id = this.id;
         var marks = Editor.marks(inEditor);
         var res = marks ? marks[id] : false;
         return Boolean(res);
       },
       isHotkey: function (inEvent) {
+        var hotkey = this.hotkey;
         if (!hotkey) return false;
         return isHotkey(hotkey, inEvent);
       },
       activate: (inEditor, inValue) => {
+        var id = this.id;
         Editor.addMark(inEditor, id, inValue);
       },
       deactivate: function (inEditor) {
+        var id = this.id;
         Editor.removeMark(inEditor, id);
       },
       toggle: function (inEditor, inValue) {
-        var cmd = plugin.commands;
+        var cmd = this.commands;
         if (!cmd.is()) {
           cmd.activate(inEditor, inValue);
         } else {
@@ -56,7 +60,7 @@
     events: {
       keydown: function (inSender, inEvent) {
         var editor = inSender.editor;
-        var cmd = plugin.commands;
+        var cmd = this.commands;
         if (cmd.isHotkey(inEvent)) {
           inEvent.preventDefault();
           cmd.toggle(editor, true);
@@ -70,13 +74,7 @@
     statics: {
       define: function (inSchema) {
         var schema = nxDeepAssign(null, DEFAULT_SCHEMA, inSchema);
-        return nxBind(
-          schema,
-          schema.serialize,
-          schema.commands,
-          schema.events,
-          schema.statics
-        );
+        return nxBind(schema, schema.serialize, schema.commands, schema.events, schema.statics);
       },
       actived: function (inNode, inPlugins) {
         var isElement = Element.isElement(inNode);

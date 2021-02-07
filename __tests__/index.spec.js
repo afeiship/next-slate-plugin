@@ -13,11 +13,7 @@
           }
         }
       });
-      const deepString = p1.serialize.output.toString();
       expect(p1.type).toBe('format');
-      expect(deepString.includes('<strong>${children}</strong>')).toBe(true);
-      expect(p1.serialize.input === nx.noop).toBe(true);
-      expect(p1.render === nx.noop).toBe(true);
     });
 
     test('api actived - element should get single', function () {
