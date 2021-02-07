@@ -32,7 +32,7 @@
         if (!hotkey) return false;
         return isHotkey(hotkey, inEvent);
       },
-      activate: (inEditor, inValue) => {
+      activate: function (inEditor, inValue) {
         var id = this.id;
         Editor.addMark(inEditor, id, inValue);
       },
@@ -77,7 +77,7 @@
 
         // marks
         var results = [];
-        nx.forIn(inNode, (mark, value) => {
+        nx.forIn(inNode, function (mark, value) {
           if (mark !== 'text' && !!value) {
             var plugin = inPlugins.find(function (plugin) {
               return plugin.id === mark;
