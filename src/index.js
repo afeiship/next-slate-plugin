@@ -5,6 +5,7 @@
   var nxBind = nx.bind || require('@jswork/next-bind');
   var NxSlateDefaults = nx.SlateDefaults || require('@jswork/next-slate-defaults');
   var slate = global.slate || require('slate');
+  var isHotkey = global.isHotkey || require('is-hotkey').default;
   var Element = slate.Element;
   var DEFAULT_SCHEMA = {
     id: null,

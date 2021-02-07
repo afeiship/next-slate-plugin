@@ -39,6 +39,7 @@
     "@jswork/next-bind": "^1.0.2",
     "@jswork/next-deep-assign": "^1.0.2",
     "@jswork/next-slate-defaults": "^1.0.4",
+    "is-hotkey": "^0.2.0",
     "slate": "^0.59.0"
   },
   "keywords": [

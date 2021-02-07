@@ -3,7 +3,7 @@
  * description: Slate plugin manager.
  * homepage: https://github.com/afeiship/next-slate-plugin
  * version: 1.0.13
- * date: 2021-02-07 11:21:42
+ * date: 2021-02-07 12:07:51
  * license: MIT
  */
 
@@ -14,6 +14,7 @@
   var nxBind = nx.bind || require('@jswork/next-bind');
   var NxSlateDefaults = nx.SlateDefaults || require('@jswork/next-slate-defaults');
   var slate = global.slate || require('slate');
+  var isHotkey = global.isHotkey || require('is-hotkey').default;
   var Element = slate.Element;
   var DEFAULT_SCHEMA = {
     id: null,
