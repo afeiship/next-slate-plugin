@@ -18,8 +18,41 @@
       output: NxSlateDefaults.exporter
     },
     statics: {},
-    commands: null,
-    events: null,
+    commands: {
+      is: function (inEditor) {
+        var marks = Editor.marks(inEditor);
+        var res = marks ? marks[id] : false;
+        return Boolean(res);
+      },
+      isHotkey: function (inEvent) {
+        if (!hotkey) return false;
+        return isHotkey(hotkey, inEvent);
+      },
+      activate: (inEditor, inValue) => {
+        Editor.addMark(inEditor, id, inValue);
+      },
+      deactivate: function (inEditor) {
+        Editor.removeMark(inEditor, id);
+      },
+      toggle: function (inEditor, inValue) {
+        var cmd = plugin.commands;
+        if (!cmd.is()) {
+          cmd.activate(inEditor, inValue);
+        } else {
+          cmd.deactivate(inEditor);
+        }
+      }
+    },
+    events: {
+      keydown: function (inSender, inEvent) {
+        var editor = inSender.editor;
+        var cmd = plugin.commands;
+        if (cmd.isHotkey(inEvent)) {
+          inEvent.preventDefault();
+          cmd.toggle(editor, true);
+        }
+      }
+    },
     render: nx.noop
   };
 
