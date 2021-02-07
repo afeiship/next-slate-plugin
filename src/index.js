@@ -41,7 +41,7 @@
       },
       toggle: function (inEditor, inValue) {
         var cmd = this.commands;
-        if (!cmd.is()) {
+        if (!cmd.is(inEditor)) {
           cmd.activate(inEditor, inValue);
         } else {
           cmd.deactivate(inEditor);
