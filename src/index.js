@@ -7,6 +7,7 @@
   var slate = global.slate || require('slate');
   var isHotkey = global.isHotkey || require('is-hotkey').default;
   var Element = slate.Element;
+  var Editor = slate.Editor;
   var DEFAULT_SCHEMA = {
     id: null,
     meta: {
