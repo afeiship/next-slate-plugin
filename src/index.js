@@ -23,6 +23,7 @@
     statics: {},
     commands: {
       is: function (inEditor) {
+        if (!inEditor) return false;
         var id = this.id;
         var marks = Editor.marks(inEditor);
         var res = marks ? marks[id] : false;
@@ -34,14 +35,17 @@
         return isHotkey(hotkey, inEvent);
       },
       activate: function (inEditor, inValue) {
+        if (!inEditor) return;
         var id = this.id;
         Editor.addMark(inEditor, id, inValue);
       },
       deactivate: function (inEditor) {
+        if (!inEditor) return;
         var id = this.id;
         Editor.removeMark(inEditor, id);
       },
       toggle: function (inEditor, inValue) {
+        if (!inEditor) return;
         var cmd = this.commands;
         if (!cmd.is(inEditor)) {
           cmd.activate(inEditor, inValue);
